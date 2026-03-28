@@ -1,0 +1,411 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Богиня глюкозы | Метод Джесси Инчасп</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f9fef7;
+            color: #1e2f2c;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Градиентный заголовок в зеленых тонах с прозрачностью */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 1rem;
+        }
+        .gradient-title {
+            font-size: clamp(2.2rem, 7vw, 4rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #2c6e2f, #6fbf4c, #b6e86c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .hero-sub {
+            font-size: 1.2rem;
+            background: rgba(111, 191, 76, 0.12);
+            backdrop-filter: blur(4px);
+            border-radius: 60px;
+            display: inline-block;
+            padding: 0.5rem 1.8rem;
+            font-weight: 500;
+            color: #2a5c2a;
+        }
+
+        /* секции */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(120deg, #2c6e2f, #6fbf4c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 70%;
+            height: 3px;
+            background: linear-gradient(90deg, #b6e86c, #2c6e2f);
+            border-radius: 4px;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1b4d1b;
+            border-left: 5px solid #6fbf4c;
+            padding-left: 1rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.8rem 0 0.6rem;
+            color: #3c7e3a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* акцентные элементы */
+        .accent-badge {
+            background: #eaf8e4;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            display: inline-block;
+            font-weight: 600;
+            color: #2c6e2f;
+        }
+
+        /* карточки навыков с анимацией */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0 1rem;
+        }
+        .skill-card {
+            background: white;
+            border-radius: 32px;
+            padding: 1.6rem 1.2rem;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
+            transition: all 0.25s ease-in-out;
+            border: 1px solid #d9f0d0;
+            text-align: center;
+        }
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 35px -12px rgba(60,126,58,0.2);
+            border-color: #b6e86c;
+        }
+        .skill-icon {
+            font-size: 2.6rem;
+            background: linear-gradient(145deg, #2c6e2f, #6fbf4c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        .skill-card h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            color: #1d4d1d;
+        }
+
+        /* кейсы в выделенных блоках */
+        .case-block {
+            background: #ffffff;
+            border-left: 6px solid #b6e86c;
+            border-radius: 28px;
+            padding: 1.3rem 1.8rem;
+            margin: 1.8rem 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            transition: 0.2s;
+        }
+        .case-block h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #2c6e2f;
+        }
+        .case-block i {
+            color: #6fbf4c;
+            font-size: 1.6rem;
+        }
+
+        /* сетка тегов (инструменты) */
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.8rem 0;
+        }
+        .tool-tag {
+            background: #f4fbf0;
+            border-radius: 60px;
+            padding: 0.6rem 1.4rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #cae3be;
+            transition: all 0.2s;
+            cursor: default;
+            color: #2c5e2a;
+        }
+        .tool-tag i {
+            color: #6fbf4c;
+        }
+        .tool-tag:hover {
+            background: #2c6e2f;
+            color: white;
+            border-color: #2c6e2f;
+            transform: translateY(-2px);
+        }
+        .tool-tag:hover i {
+            color: #e6ffc7;
+        }
+
+        /* таблица-шпаргалка */
+        .cheat-sheet {
+            background: white;
+            border-radius: 28px;
+            padding: 1.5rem;
+            margin: 1.8rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #def0d4;
+        }
+        .cheat-sheet ul {
+            margin-left: 1.5rem;
+        }
+        .cheat-sheet li {
+            margin: 0.8rem 0;
+            font-weight: 500;
+        }
+
+        hr {
+            margin: 2rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #cfe6c4, transparent);
+        }
+
+        .insight-quote {
+            background: #eef9e9;
+            padding: 1.5rem;
+            border-radius: 28px;
+            font-style: normal;
+            border-right: 3px solid #6fbf4c;
+            margin: 1.5rem 0;
+        }
+
+        /* адаптив */
+        @media (max-width: 680px) {
+            .container {
+                padding: 1.2rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .skill-card {
+                padding: 1rem;
+            }
+            .case-block {
+                padding: 1rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            color: #5d8260;
+            font-size: 0.8rem;
+            border-top: 1px solid #d7ecd0;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #e6ffd9, transparent);
+            padding: 0 0.2rem;
+            font-weight: 600;
+            color: #2c6e2f;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ГРАДИЕНТНЫЙ ЗАГОЛОВОК ЗЕЛЕНЫЙ -->
+    <div class="hero">
+        <h1 class="gradient-title">БОГИНЯ ГЛЮКОЗЫ<br>Полный гид по методу Джесси Инчасп</h1>
+        <div class="hero-sub">
+            <i class="fas fa-leaf"></i> Как усмирить сахар, энергию и гормоны
+        </div>
+    </div>
+
+    <!-- Вступление: качели сахара -->
+    <div class="insight-quote">
+        <i class="fas fa-chart-line" style="color:#2c6e2f; margin-right: 10px;"></i> 
+        <strong>Знакомо?</strong> Усталость в 3 часа дня, мозг требует шоколадку, ПМС, прыщи, вес не уходит — всё это звенья одной цепи: <span class="highlight">качели сахара в крови</span>. Ими можно управлять.
+        <p style="margin-top: 12px;">Биохимик Джесси Инчасп в бестселлере «Богиня глюкозы» объясняет науку простыми правилами. Это не диета, а система приоритетов, меняющая биохимию тела.</p>
+    </div>
+
+    <!-- КАРТОЧКИ НАВЫКОВ / главные принципы метода -->
+    <div class="section-title">Ключевые навыки глюкозной богини</div>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-utensils"></i></div>
+            <h4>Правило очереди</h4>
+            <p>Сначала клетчатка, затем белок, потом углеводы. Снижает пик сахара на 70%.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-walking"></i></div>
+            <h4>10 минут после еды</h4>
+            <p>Лёгкое движение: прогулка, танцы, уборка. Мышцы съедают глюкозу без инсулина.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-apple-alt"></i></div>
+            <h4>Не ешь сахар голым</h4>
+            <p>Сладкое только с клетчаткой, жиром или белком. Никогда натощак.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-wine-bottle"></i></div>
+            <h4>Уксусный аперитив</h4>
+            <p>Уксус перед крахмалистой едой снижает гликемический пик на 20–40%.</p>
+        </div>
+    </div>
+
+    <!-- 4 ГЛАВНЫХ ПРАВИЛА подробно -->
+    <h2>📜 4 главных правила «Глюкозной богини»</h2>
+
+    <h3><i class="fas fa-carrot" style="color:#6fbf4c;"></i> 1. Правило очереди: «Сначала зелень и белок»</h3>
+    <p>Преврати любой приём пищи в трёхактную пьесу: <strong>овощи (клетчатка) → белок → углеводы и десерт</strong>. Клетчатка создаёт «сетку» в кишечнике, белок стимулирует правильные гормоны — вместе они замедляют всасывание глюкозы.</p>
+    <div class="case-block">
+        <h4><i class="fas fa-check-circle"></i> Кейс: Пицца без скачка</h4>
+        <p>Вместо того чтобы начать с пиццы, съешьте сначала большую порцию зелёного салата с оливковым маслом и кусочком курицы. После этого — пицца. Уровень сахара после еды будет на 30% ниже, чем если бы вы начали с теста.</p>
+    </div>
+
+    <h3><i class="fas fa-shoe-prints"></i> 2. Правило движения: «10 минут после еды»</h3>
+    <p>В течение первых 20 минут после еды сделайте лёгкую активность на 10–20 минут. Работающие мышцы забирают глюкозу как топливо без помощи инсулина.</p>
+    <div class="case-block">
+        <h4><i class="fas fa-dog"></i> Кейс: Послеобеденная прогулка</h4>
+        <p>Анна работала в офисе и страдала от сонливости после обеда. Она начала выходить на 10‑минутную прогулку сразу после еды. Через 3 дня энергия выровнялась, исчезла тяга к сладкому в 16:00.</p>
+    </div>
+
+    <h3><i class="fas fa-candy-cane"></i> 3. Правило баланса: «Не ешь сахар голым»</h3>
+    <p>Никогда не употребляйте сладкое и быстрые углеводы (сок, выпечка) натощак. Всегда комбинируйте с клетчаткой, белком или жиром.</p>
+    <ul>
+        <li><span class="accent-badge">❌ Плохо</span> — стакан сока утром натощак, пончик с кофе.</li>
+        <li><span class="accent-badge">✅ Отлично</span> — ягоды со сливками, горький шоколад с орехами, фрукты после полноценного завтрака.</li>
+    </ul>
+
+    <h3><i class="fas fa-apple-cider-vinegar"></i> 4. Правило уксусного аперитива: «Сначала кислое»</h3>
+    <p>Перед крахмалистой едой съешьте овощи с уксусной заправкой. Уксусная кислота — мощный ингибитор амилазы, снижает пик сахара на 20–40%.</p>
+
+    <!-- Секретный напиток подробно -->
+    <h2>🍸 Секретное оружие: вода с уксусом</h2>
+    <div class="case-block" style="background: #f8fff4;">
+        <h4><i class="fas fa-flask"></i> Рецепт и протокол</h4>
+        <p><strong>Рецепт:</strong> 1 столовая ложка яблочного уксуса на стакан воды (200–250 мл). Можно добавить щепотку корицы.<br>
+        <strong>Приём:</strong> за 15–30 минут ДО еды, богатой углеводами. Всегда разбавлять!<br>
+        <strong>Механизм:</strong> замедляет переваривание углеводов, увеличивает чувствительность мышц к инсулину. Сглаживает скачок сахара на 20–30%.</p>
+        <p><i class="fas fa-exclamation-triangle" style="color:#d49b3a;"></i> <strong>Противопоказания:</strong> гастрит, язва, рефлюкс, чувствительная эмаль. Начинайте с чайной ложки, консультируйтесь с врачом.</p>
+    </div>
+
+    <!-- ДОПОЛНИТЕЛЬНЫЙ КЕЙС про уксус -->
+    <div class="case-block">
+        <h4><i class="fas fa-bread-slice"></i> Кейс: Паста без последствий</h4>
+        <p>Олег любил спагетти, но после них накатывала сонливость и вздутие. Он начал пить воду с уксусом за 15 минут до ужина и добавил салат с заправкой перед пастой. Уровень сахара после еды перестал скакать, энергия оставалась ровной.</p>
+    </div>
+
+    <!-- Результаты: что получишь -->
+    <h2>💎 Что ты получишь в итоге?</h2>
+    <div class="skills-grid" style="margin-top: 0.5rem;">
+        <div class="skill-card"><i class="fas fa-bolt skill-icon"></i><h4>Ровная энергия</h4><p>Без послеобеденных провалов</p></div>
+        <div class="skill-card"><i class="fas fa-cookie-bite skill-icon"></i><h4>Свобода от тяги</h4><p>Навязчивое желание сладкого уходит</p></div>
+        <div class="skill-card"><i class="fas fa-weight-scale skill-icon"></i><h4>Управление весом</h4><p>Уменьшение объемов, особенно в талии</p></div>
+        <div class="skill-card"><i class="fas fa-spa skill-icon"></i><h4>Сияющая кожа</h4><p>Меньше воспалений, акне уходит</p></div>
+        <div class="skill-card"><i class="fas fa-female skill-icon"></i><h4>Гормональный баланс</h4><p>Смягчение ПМС, перепадов настроения</p></div>
+        <div class="skill-card"><i class="fas fa-heartbeat skill-icon"></i><h4>Профилактика</h4><p>Снижение риска инсулинорезистентности и диабета 2 типа</p></div>
+    </div>
+
+    <!-- Философия метода -->
+    <div class="insight-quote" style="background: #eef9e9;">
+        <i class="fas fa-feather-alt" style="color:#3c7e3a;"></i>
+        <strong>Философия метода:</strong> Ничего не запрещено. Ты учишься расставлять приоритеты, чтобы есть любимое, оставаясь здоровой, энергичной и в хорошем настроении.
+    </div>
+
+    <!-- Шпаргалка для быстрого старта -->
+    <h2>📌 Шпаргалка для быстрого старта</h2>
+    <div class="cheat-sheet">
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li><i class="fas fa-check-circle" style="color:#6fbf4c;"></i> <strong>Очередь на тарелке:</strong> Овощи → Белок → Углеводы.</li>
+            <li><i class="fas fa-check-circle" style="color:#6fbf4c;"></i> <strong>Прогулка после еды:</strong> минимум 10 минут.</li>
+            <li><i class="fas fa-check-circle" style="color:#6fbf4c;"></i> <strong>Закусь к сладкому:</strong> орехи, йогурт, фрукты — только после еды.</li>
+            <li><i class="fas fa-check-circle" style="color:#6fbf4c;"></i> <strong>Уксусный ход:</strong> салат с уксусной заправкой или стакан воды с уксусом за 15 мин до еды.</li>
+        </ul>
+    </div>
+
+    <!-- СЕТКА ИНСТРУМЕНТОВ В ВИДЕ ТЕГОВ -->
+    <div class="section-title">Инструменты глюкозного баланса</div>
+    <div class="tools-grid">
+        <div class="tool-tag"><i class="fas fa-apple-cider-vinegar"></i> Вода с уксусом</div>
+        <div class="tool-tag"><i class="fas fa-walking"></i> Постпрандиальная прогулка</div>
+        <div class="tool-tag"><i class="fas fa-utensil-spoon"></i> Правило очереди</div>
+        <div class="tool-tag"><i class="fas fa-cheese"></i> Белок + клетчатка</div>
+        <div class="tool-tag"><i class="fas fa-chart-line"></i> Глюкометр (наблюдение)</div>
+        <div class="tool-tag"><i class="fas fa-seedling"></i> Уксусная заправка</div>
+        <div class="tool-tag"><i class="fas fa-mug-hot"></i> Травяной чай после еды</div>
+        <div class="tool-tag"><i class="fas fa-clock"></i> 10-минутное окно активности</div>
+        <div class="tool-tag"><i class="fas fa-apple-alt"></i> Фрукты на десерт</div>
+        <div class="tool-tag"><i class="fas fa-dumbbell"></i> Мышечное топливо</div>
+    </div>
+
+    <!-- Завершающая цитата про книгу -->
+    <hr>
+    <div class="insight-quote" style="text-align: center;">
+        <i class="fas fa-book-open" style="font-size: 2rem; color:#6fbf4c;"></i>
+        <p style="margin-top: 10px;">Книга «Богиня глюкозы» — детальное, дружелюбное и научное объяснение ПОЧЕМУ это работает. Must‑read для всех, кто хочет разобраться в причине своих симптомов, а не бороться с их последствиями.</p>
+    </div>
+
+    <footer>
+        <i class="fas fa-leaf"></i> Глюкозная гармония | Метод Джесси Инчасп | Ровная энергия, гормоны и свобода от сахарных качелей
+    </footer>
+</div>
+</body>
+</html>
